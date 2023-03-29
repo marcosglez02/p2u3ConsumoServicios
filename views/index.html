@@ -2,6 +2,64 @@
 
 <div class="container mt-2">
     <h1 class="text-center">Listado de alumnos</h1>
+    
+        <div class="row mb-3">
+            <div class="col-2 text-center">
+                <label class="form-label" for="">Matricula</label>
+            </div>
+            <div class="col-10">
+                <input class="form-control" type="text" required>
+            </div>
+        </div>
+        <div class="row mb-3">
+            <div class="col-2 text-center">
+                <label class="form-label" for="">Nombre</label>
+            </div>
+            <div class="col-10">
+                <input class="form-control" type="text" required>
+            </div>
+        </div>
+        <div class="row mb-3">
+            <div class="col-2 text-center">
+                <label class="form-label" for="">Domicilio</label>
+            </div>
+            <div class="col-10">
+                <input class="form-control" type="text" required>
+            </div>
+        </div>
+        <div class="row mb-3">
+            <div class="col-2 text-center">
+                <label class="form-label" for="">Sexo</label>
+            </div>
+            <div class="col-10">
+                <select class="form-select" name="" id="">
+                    <option value="1">Masculino</option>
+                    <option value="2">Femenino</option>
+                    <option value="3">Otro</option>
+                </select>
+            </div>
+        </div>
+        <div class="row mb-3">
+            <div class="col-2 text-center">
+                <label class="form-label" for="">Especialidad</label>
+            </div>
+            <div class="col-10">
+                <input class="form-control" type="text" required>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col text-end">
+                <a href="/" class="btn btn-secondary">Buscar</a> 
+            </div>
+        </div>
+        <div class="row mt-3">
+            <div class="col text-end">
+                <a class="btn btn-warning" href="">Actualizar</a>
+                <a class="btn btn-danger" href="">Eliminar</a>
+                <a class="btn btn-success" href="">Agregar</a>
+            </div>
+            
+        </div>
 </div>
 
 <%-include('partials/piePagina.html');%>
