@@ -26,15 +26,15 @@ AlumnoDb.insertar = function insertar(alumno){
 }
 // Mostrar todos
 AlumnoDb.mostrarTodos = function mostrarTodos(){
-    alumno = {}
+    //alumno = {}
     return new Promise((resolver,reject)=>{
         let sqlConsulta ="select * from alumnos;";
         conexion.query(sqlConsulta,null,function(err,res){
             if(err){
                 reject(err.message)
             }else{
-                alumno = res;
-                resolver(alumno)
+                let alumnos = res;
+                resolver(alumnos)
             }
         })
     })
