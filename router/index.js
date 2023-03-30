@@ -3,6 +3,7 @@ const router = express.Router();
 const bodyParse = require("body-parser");
 const db = require("../models/alumno.js")
 const axios = require("axios")
+const popup = require("popups")
 
 let alumno = {
     matricula: "",
@@ -32,7 +33,13 @@ router.get('/borrar', async (req, res) => {
 })
 
 router.get('/insertar', async (req, res) => {
+    let matricula = req.query.matricula
+    let [rows] = await db.buscarMatricula(matricula)
+    if(rows){
+        res.redirect('/')
+    }else{
 
+    
     alumno = {
         matricula: req.query.matricula,
         nombre: req.query.nombre,
@@ -43,6 +50,7 @@ router.get('/insertar', async (req, res) => {
 
     await db.insertar(alumno)
     res.redirect('/')
+    }
 })
 
 router.get('/actualizar', async (req, res) => {
