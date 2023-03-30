@@ -3,7 +3,6 @@ const router = express.Router();
 const bodyParse = require("body-parser");
 const db = require("../models/alumno.js")
 const axios = require("axios")
-const popup = require("popups")
 
 let alumno = {
     matricula: "",
