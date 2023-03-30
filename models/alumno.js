@@ -42,15 +42,15 @@ AlumnoDb.mostrarTodos = function mostrarTodos(){
 
 // Buscar por matricula
 AlumnoDb.buscarMatricula = function buscarMatricula(matricula){
-    alumno = {}
+    //alumno = {}
     return new Promise((resolver,reject)=>{
         let sqlConsulta ="select * from alumnos where matricula = ?;";
         conexion.query(sqlConsulta,[matricula],function(err,res){
             if(err){
                 reject(err.message)
             }else{
-                alumno = res;
-                resolver(alumno)
+                let alumnos = res;
+                resolver(alumnos)
             }
         })
     })
@@ -72,10 +72,10 @@ AlumnoDb.borrarMatricula = function borrarMatricula(matricula){
     })
 }
 // Actualizar alumno
-AlumnoDb.actualizar = function actualizar(alumno){
+AlumnoDb.actualizar = function actualizar(alumno,matricula){
     return new Promise((resolver,reject)=>{ 
-        let sqlConsulta ="update alumnos set ? where ?";
-        conexion.query(sqlConsulta,alumno,function(err,res){
+        let sqlConsulta ="update alumnos set ? where matricula = ?";
+        conexion.query(sqlConsulta,[alumno,matricula],function(err,res){
             if(err){
                 reject(err.message)
             }else{

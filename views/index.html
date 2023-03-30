@@ -8,7 +8,7 @@
                 <label class="form-label" for="">Matricula</label>
             </div>
             <div class="col-10">
-                <input class="form-control" name="matricula" type="text" required>
+                <input class="form-control" id="matricula" name="matricula" type="text" required>
             </div>
         </div>
         <div class="row mb-3">
@@ -16,7 +16,7 @@
                 <label class="form-label" for="">Nombre</label>
             </div>
             <div class="col-10">
-                <input class="form-control" name="nombre" type="text" required>
+                <input class="form-control" name="nombre" type="text">
             </div>
         </div>
         <div class="row mb-3">
@@ -24,7 +24,7 @@
                 <label class="form-label" for="">Domicilio</label>
             </div>
             <div class="col-10">
-                <input class="form-control" name="domicilio" type="text" required>
+                <input class="form-control" name="domicilio" type="text">
             </div>
         </div>
         <div class="row mb-3">
@@ -44,23 +44,24 @@
                 <label class="form-label" for="">Especialidad</label>
             </div>
             <div class="col-10">
-                <input class="form-control" name="especialidad" type="text" required>
+                <input class="form-control" name="especialidad" type="text">
             </div>
         </div>
         <div class="row">
             <div class="col text-end">
-                <a href="/" class="btn btn-secondary">Buscar</a> 
+                <button formaction="/consultarMatricula" formenctype="application/x-www-form-urlencoded" formmethod="get" class="btn btn-secondary">Buscar</button>
             </div>
         </div>
         <div class="row mt-3">
             <div class="col text-end">
-                <a class="btn btn-warning" href="">Actualizar</a>
-                <a class="btn btn-danger" href="">Eliminar</a>
-                <button formaction="/insertar" formmethod="post" type="submit" class="btn btn-success">Agregar</button>
+                <button formaction="/actualizar" formmethod="get" class="btn btn-warning">Actualizar</button>
+                <button formaction="/borrar" formmethod="get" class="btn btn-danger">Eliminar</button>
+                <button formaction="/insertar" formmethod="get" type="submit" class="btn btn-success">Agregar</button>
             </div>
             
         </div>
     </form>
+    <a href="/" class="btn btn-dark">Mostrar todos</a>
     <% if(alumnos){%>
         <table class="mt-3 table table-hover table-striped">
             <thead>
